@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<h1>질문 생성</h1>
+	<!-- view에서 'error'변수에 값을 넣었는지 확인 -->
+	{% if error %}
+		<p><strong>{{error}}</strong></p>
+	{% endif %}
+	
+	<form action=""method="POST">
+	{% csrf_token %}
+	<table>
+		{{ form.as_table }}
+	</table>
+	<!-- 
+	<input type="text" name="question_text" maxlength="200" id="a"/>
+	<label for="a">질문 이름</label> -->
+	<input type="submit" value="만들기"/>
+	</form>
+
+</body>
+</html>
